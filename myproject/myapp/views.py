@@ -26,13 +26,11 @@ def result(request):
     return render(request, 'result.html', {'result': result})
 
 def getNouns(sentence):
-            # nlp = spacy.load("en_core_web_trf")
             nlpSentence = nlp(sentence)
             nouns = []
             for token in nlpSentence:
                 if token.pos_ == "NOUN":
                     nouns.append(token)
-            # print("nouns...", nouns)        
             return nouns  
 
 def conditionsFromMedicalTerms(nouns):
