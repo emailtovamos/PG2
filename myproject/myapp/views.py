@@ -8,6 +8,9 @@ from myproject.settings import BASE_DIR
 
 nlp = spacy.load("en_core_web_trf")
 print("nlp loaded")
+url = 'http://www.orphadata.org/data/xml/en_product4.xml'
+df = pdx.read_xml(url, ['JDBOR', 'HPODisorderSetStatusList'],encoding='cp1252')
+print("xml read")
 
 
 # Create your views here.
@@ -33,10 +36,7 @@ def getNouns(sentence):
             return nouns  
 
 def conditionsFromMedicalTerms(nouns):
-    # root = ET.parse('./phenotypes.xml').getroot()
-    print(os.getcwd())
     file_path = os.path.join(BASE_DIR, 'model/phenotypes.xml')
-    df = pdx.read_xml(file_path, ['JDBOR', 'HPODisorderSetStatusList'],encoding='cp1252')
     possibleDiseases = []
     for noun in nouns:
         # check if noun is in sympton, if yes then get its corresponding disease and add to diseases
