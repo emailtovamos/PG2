@@ -15,7 +15,7 @@ def index(request):
     return render(request, 'index.html')
 
 def result(request):
-    testquery = str(request.GET['testquery'])
+    testquery = str(request.POST.get('testquery', False))
 
     nouns = getNouns(testquery)
     result = conditionsFromMedicalTerms(nouns)
