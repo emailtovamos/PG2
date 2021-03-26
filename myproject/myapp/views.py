@@ -2,9 +2,6 @@ from django.shortcuts import render
 import spacy
 import xml.etree.ElementTree as ET
 import pandas_read_xml as pdx
-import os
-from django.conf import settings
-from myproject.settings import BASE_DIR
 
 nlp = spacy.load("en_core_web_trf")
 print("nlp loaded")
@@ -34,7 +31,6 @@ def getNouns(sentence):
             return nouns  
 
 def conditionsFromMedicalTerms(nouns):
-    file_path = os.path.join(BASE_DIR, 'model/phenotypes.xml')
     possibleDiseases = []
     for noun in nouns:
         # check if noun is in sympton, if yes then get its corresponding disease and add to diseases
