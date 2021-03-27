@@ -1,1 +1,1 @@
-web: python3 -m spacy download en_core_web_sm; ../django_env/bin/gunicorn myproject.wsgi
+web: python3 -m spacy download en_core_web_sm; python manage.py runserver
