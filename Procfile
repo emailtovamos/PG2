@@ -1,1 +1,1 @@
-web: python3 -m spacy download en_core_web_sm; python manage.py runserver
+web: python3 -m spacy download en_core_web_sm; python myproject/manage.py runserver
