@@ -1,1 +1,1 @@
-web: python3 -m spacy download en_core_web_sm; ls; cd myproject/ ;  gunicorn myproject.wsgi
+web: python3 -m spacy download en_core_web_sm; ls; cd myproject/ ;  gunicorn myproject.wsgi --timeout 35
