@@ -3,7 +3,7 @@ import spacy
 import xml.etree.ElementTree as ET
 import pandas_read_xml as pdx
 
-nlp = spacy.load("en_core_web_trf")
+nlp = spacy.load("en_core_web_sm") #en_core_web_sm, en_core_web_trf
 print("nlp loaded")
 url = 'http://www.orphadata.org/data/xml/en_product4.xml'
 df = pdx.read_xml(url, ['JDBOR', 'HPODisorderSetStatusList'],encoding='cp1252')
