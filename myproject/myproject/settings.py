@@ -26,7 +26,7 @@ SECRET_KEY = 'ukv1*k4_73gz_$o0cp!iaaxbiw%9&_eux9jgq3khc&v2amzom$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'arcane-retreat-46619.herokuapp.com']
 
 
 # Application definition
