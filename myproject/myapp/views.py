@@ -38,12 +38,20 @@ def conditionsFromMedicalTerms(nouns):
             if 'Disorder' in df.iloc[i]['HPODisorderSetStatus']:
                 if 'HPODisorderAssociationList' in df.iloc[i]['HPODisorderSetStatus']['Disorder']:
                     if 'HPODisorderAssociation' in df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']:
-                        symptom = df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']['HPODisorderAssociation'][0]['HPO']['HPOTerm']
+                        # symptom = df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']['HPODisorderAssociation'][0]['HPO']['HPOTerm']
+                        for j in range(len(df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']['HPODisorderAssociation'])):
+                            if 'HPO' in df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']['HPODisorderAssociation'][j]:
+                                if 'HPOTerm' in df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']['HPODisorderAssociation'][j]['HPO']:
+                                    symptom = df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']['HPODisorderAssociation'][j]['HPO']['HPOTerm']
+                                    if noun.text in symptom:
+                                        diseaseName = df.iloc[i]['HPODisorderSetStatus']['Disorder']['Name']['#text']
+                                        possibleDiseases.append(diseaseName)
+                                        break
                         # TODO loop over j
-                        if noun.text in symptom:
-                            # print("symptom found!")
-                            diseaseName = df.iloc[i]['HPODisorderSetStatus']['Disorder']['Name']['#text']
-                            possibleDiseases.append(diseaseName)
+                        # if noun.text in symptom:
+                        #     # print("symptom found!")
+                        #     diseaseName = df.iloc[i]['HPODisorderSetStatus']['Disorder']['Name']['#text']
+                        #     possibleDiseases.append(diseaseName)
                         # df.iloc[i]['HPODisorderSetStatus']['Disorder']['HPODisorderAssociationList']['HPODisorderAssociation'][j]['HPO']['HPOTerm']
                         # i - Diseases, j - symptoms
     return possibleDiseases
