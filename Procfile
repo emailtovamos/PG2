@@ -1,1 +1,1 @@
-web: python3 -m spacy download en_core_web_sm; cd ..;  gunicorn myproject.wsgi
+web: python3 -m spacy download en_core_web_sm; ls ;  gunicorn myproject.wsgi
