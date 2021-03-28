@@ -1,4 +1,6 @@
-**Link to Heroku app**: https://arcane-retreat-46619.herokuapp.com/
+**Link to Heroku app**: 
+
+https://arcane-retreat-46619.herokuapp.com/
 
 
 **Instructions to run locally:**
@@ -34,3 +36,9 @@
     `python myproject/manage.py runserver`
 
 - Go to the link and enter text to get expected diseases. Accuracy won't be great due to no full check and usage of smaller spacy package.
+
+**Home page**
+![page1](images/1.png)
+
+**Results page**
+![page2](images/2.png)
