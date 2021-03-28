@@ -1,9 +1,9 @@
-**Link to Heroku app**: 
+# Link to Heroku app
 
 https://arcane-retreat-46619.herokuapp.com/
 
 
-**Instructions to run locally:**
+# Instructions to run locally
 
 - Download code and go to code directory in command line: 
 
@@ -37,8 +37,8 @@ https://arcane-retreat-46619.herokuapp.com/
 
 - Go to the link and enter text to get expected diseases. Accuracy won't be great due to no full check and usage of smaller spacy package.
 
-**Home page**
+# Home page
 ![page1](images/1.png)
 
-**Results page**
+# Results page
 ![page2](images/2.png)
